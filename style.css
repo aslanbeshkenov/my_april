@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&display=swap");
+
+body {
+  font-family: "Tilt Prism", "Times New Roman", serif;
+}
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.my {
+  font-size: 40px;
+}
+
+.timer {
+  display: flex;
+  font-size: 48px;
+}
+
+.wrap {
+  padding: 10px 20px;
+  text-align: center;
+  border: 1px solid grey;
+  box-shadow: 3px 3px grey;
+  margin-right: 15px;
+  font-weight: 700;
+}
+
+.wrap:last-child {
+  margin-right: 0;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 400;
+}
