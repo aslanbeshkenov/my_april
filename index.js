@@ -1,12 +1,32 @@
 window.addEventListener("DOMContentLoaded", () => {
   const deadLine = "2023-04-29";
 
+  function getZero(num) {
+    if (num < 10) {
+      return `0${num}`;
+    } else {
+      return num;
+    }
+  }
+
   function getTimeRemaining(endtime) {
-    const t = Date.parse(endtime) - Date.parse(new Date()),
-      days = Math.floor(t / (1000 * 60 * 60 * 24)),
-      hours = Math.floor((t / (1000 * 60 * 60)) % 24),
-      minutes = Math.floor((t / (1000 * 60)) % 60),
-      seconds = Math.floor((t / 1000) % 60);
+    const t = Date.parse(endtime) - Date.parse(new Date());
+    let days, hours, minutes, seconds;
+
+    if (t <= 0) {
+      return {
+        total: 00,
+        days: 00,
+        hours: 00,
+        minutes: 00,
+        seconds: 00,
+      };
+    } else {
+      (days = getZero(Math.floor(t / (1000 * 60 * 60 * 24)))),
+        (hours = getZero(Math.floor((t / (1000 * 60 * 60)) % 24))),
+        (minutes = getZero(Math.floor((t / (1000 * 60)) % 60))),
+        (seconds = getZero(Math.floor((t / 1000) % 60)));
+    }
 
     return {
       total: t,
@@ -24,6 +44,8 @@ window.addEventListener("DOMContentLoaded", () => {
       minutes = timer.querySelector(".minutes"),
       seconds = timer.querySelector(".seconds"),
       timeInterval = setInterval(updateClock, 1000);
+
+    updateClock();
 
     function updateClock() {
       const t = getTimeRemaining(endtime);
