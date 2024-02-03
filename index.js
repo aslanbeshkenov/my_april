@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const deadLine = "2023-04-29";
+  const deadLine = "2024-02-29";
 
   function getZero(num) {
     if (num < 10) {
